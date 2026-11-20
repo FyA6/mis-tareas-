@@ -1,0 +1,344 @@
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(124, 92, 255, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(168, 85, 247, 0.15),
+            transparent 30%
+        ),
+        #0b1020;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+h1 {
+    width: 100%;
+    max-width: 650px;
+
+    text-align: center;
+
+    padding: 28px 20px;
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.09),
+        rgba(124, 92, 255, 0.12)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+
+/* =========================================
+   CAMPO DE TEXTO
+========================================= */
+
+input[type="text"] {
+    display: block;
+
+    width: 100%;
+    max-width: 650px;
+
+    padding: 17px 20px;
+
+    margin: 0 auto 14px auto;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 15px;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #9da6bd;
+}
+
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.15),
+        0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   BOTÓN AGREGAR
+========================================= */
+
+button {
+    display: block;
+
+    width: 180px;
+
+    padding: 14px 20px;
+
+    margin: 0 auto;
+
+    border: none;
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #9b5cf6
+    );
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 12px 28px rgba(124, 58, 237, 0.5);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   LISTA DE TAREAS
+========================================= */
+
+ul {
+    width: 100%;
+    max-width: 650px;
+
+    list-style: none;
+
+    margin: 30px auto 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   ELEMENTOS DE LA LISTA
+========================================= */
+
+li {
+    position: relative;
+
+    width: 100%;
+
+    padding: 18px 20px 18px 25px;
+
+    color: #eef1ff;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    overflow: hidden;
+}
+
+
+/* Línea morada de cada tarea */
+
+li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: linear-gradient(
+        180deg,
+        #7c3aed,
+        #a855f7
+    );
+}
+
+
+/* =========================================
+   EFECTO HOVER
+========================================= */
+
+li:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: rgba(139, 92, 246, 0.35);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   EFECTO AL HACER CLICK
+========================================= */
+
+li:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   ANIMACIÓN DE LAS TAREAS
+========================================= */
+
+li {
+    animation: aparecer 0.35s ease both;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   DISEÑO PARA CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+
+        padding: 23px 15px;
+
+        margin-bottom: 25px;
+    }
+
+    input[type="text"] {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    ul {
+        margin-top: 30px;
+    }
+
+    li {
+        padding: 16px 18px 16px 23px;
+    }
+}

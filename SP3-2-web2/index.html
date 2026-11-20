@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Tareas</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196f3">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <h1>Mis Tareas Escolares</h1>
+
+    <input type="text" id="tarea" placeholder="Nueva tarea...">
+    <button onclick="agregarTarea()">Agregar</button>
+
+    <ul id="lista"></ul>
+
+    <!-- Script principal -->
+    <script src="js/app.js"></script>
+
+    <!-- Registro del service worker -->
+     <script>
+        if ('serviceWorker' in navigator){
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(reg => console.log('Service Worker registrado', reg))
+                    .catch(err => console.error('Error al registrar Service Worker', err));
+            });
+        }
+     </script>
+</body>
+</html>
+
+
+    
